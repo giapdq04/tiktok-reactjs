@@ -1,31 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, {useRef, useState} from 'react';
 
 function Content() {
-    const [avatar, setAvatar] = useState()
+    const renderCount = useRef(0)
 
-    useEffect(() => {
-        return()=>{
-            avatar && URL.revokeObjectURL(avatar.preview)
-        }
-    }, [avatar]);
+    const [count, setCount] = useState(0)
 
-    const handlePreviewAvatar = (e) => {
-        const file = e.target.files[0]
-
-        file.preview = URL.createObjectURL(file)
-
-        setAvatar(file)
-
-        return () => setAvatar(null)
-    }
+    renderCount.current += 1
 
     return (
         <div>
-            <input type="file" onChange={handlePreviewAvatar}/>
-
-            {avatar && (
-                <img src={avatar.preview} alt="" width={'80%'}/>
-            )}
+            <h1>Số lần render: {renderCount.current}</h1>
+            <h1>Số: {count}</h1>
+            <button onClick={() => setCount(count + 1)}>Thay đổi màu nền</button>
         </div>
     );
 }
