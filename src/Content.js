@@ -1,19 +1,13 @@
-import React, {useRef, useState} from 'react';
+import React, {memo} from 'react';
 
-function Content() {
-    const renderCount = useRef(0)
-
-    const [count, setCount] = useState(0)
-
-    renderCount.current += 1
-
+function Content({onChange}) {
+    console.log('re-render')
     return (
-        <div>
-            <h1>Số lần render: {renderCount.current}</h1>
-            <h1>Số: {count}</h1>
-            <button onClick={() => setCount(count + 1)}>Thay đổi màu nền</button>
-        </div>
+        <>
+            <h2>HELLO ANH EM F8</h2>
+            <button onClick={onChange}>Toggle</button>
+        </>
     );
 }
 
-export default Content;
+export default memo(Content);
