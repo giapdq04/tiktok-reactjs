@@ -1,11 +1,10 @@
 import React, {memo} from 'react';
+import Paragraph from "./Paragraph";
 
-function Content({onChange}) {
-    console.log('re-render')
+function Content() {
     return (
         <>
-            <h2>HELLO ANH EM F8</h2>
-            <button onClick={onChange}>Toggle</button>
+            <Paragraph/>
         </>
     );
 }
