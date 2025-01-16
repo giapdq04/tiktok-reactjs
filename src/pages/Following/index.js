@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Home() {
+function Following() {
     return (
-        <h2>Home Page</h2>
+        <h2>Following Page</h2>
     );
 }
 
-export default Home;
+export default Following;
