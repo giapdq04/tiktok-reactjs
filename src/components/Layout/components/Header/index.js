@@ -1,8 +1,11 @@
-import React from 'react'
+import clsx from 'clsx'
+import styles from './Header.module.scss'
 
 const Header = () => {
   return (
-    <h2>Header</h2>
+    <header className={clsx(styles.wrapper)}>
+      <div className={clsx(styles.inner)}></div>
+    </header>
   )
 }
 
