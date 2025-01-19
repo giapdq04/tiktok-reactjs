@@ -39,8 +39,6 @@ const Button = ({
         Comp = 'a'
     }
 
-    console.log('className: ', className)
-
     const classes = clsx(style.wrapper, {
         [className]: className,
         [style.primary]: primary,

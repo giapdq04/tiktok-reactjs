@@ -1,8 +1,9 @@
 import {useEffect, useRef, useState} from 'react';
 import {
-    faArrowRightToBracket,
-    faCircleNotch,
+    faCircleNotch, faCircleQuestion,
     faCircleXmark,
+    faEarthAsia,
+    faEllipsisVertical, faKeyboard,
     faMagnifyingGlass
 } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -14,6 +15,23 @@ import Tippy from '@tippyjs/react/headless';
 import {Wrapper} from '../Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
+import Menu from "~/components/Layout/components/Popper/Menu";
+
+const MENU_ITEM = [
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia}/>,
+        title: 'English'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion}/>,
+        title: 'Feedback and help',
+        to: '/feedback'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard}/>,
+        title: 'Keyboard shortcuts'
+    },
+]
 
 const Header = () => {
     const [searchResult, setSearchResult] = useState([])
@@ -77,6 +95,12 @@ const Header = () => {
                     >
                         Log in
                     </Button>
+
+                    <Menu item={MENU_ITEM}>
+                        <button className={clsx(styles.moreBtn)}>
+                            <FontAwesomeIcon icon={faEllipsisVertical}/>
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>
